@@ -14,7 +14,7 @@ yum -y install yum-utils device-mapper-persistent-datalvm2
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo   
 
 #3.安装docker 
-yum makecache fast yum install docker-ce docker-ce-cli containerd.io  
+yum makecache fast && yum -y install docker-ce docker-ce-cli containerd.io 
 
 #4.启动docker服务 
 systemctl start docker  
@@ -39,7 +39,7 @@ docker images
 2. 在服务器上加载镜像包(预计需要五分钟左右)和查看是否加载成功
 ```shell
 #加载镜像包 
-docker load -i wedatasphere.tar 
+docker load -i wedatasphere.tar.gz
 #查看是否存在REPOSITORY名称为wedatasphere的镜像 
 docker images
 ```
